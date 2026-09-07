@@ -1,0 +1,40 @@
+{
+  "scenario_id": "SCENARIO_1_HIGHWAY_NOMINAL",
+  "description": "Cruising on a 3-lane highway with nominal traffic flow and safe gap distances.",
+  "ego_vehicle": {
+    "id": "ego",
+    "lane_id": 1,
+    "position_x": 100.0,
+    "position_y": 4.0,
+    "velocity_x": 25.0,
+    "velocity_y": 0.0,
+    "target_speed": 25.0
+  },
+  "obstacles": [
+    {
+      "id": "car_lead",
+      "vehicle_type": "car",
+      "lane_id": 1,
+      "position_x": 180.0,
+      "position_y": 4.0,
+      "velocity_x": 25.0,
+      "velocity_y": 0.0
+    },
+    {
+      "id": "car_left",
+      "vehicle_type": "car",
+      "lane_id": 0,
+      "position_x": 120.0,
+      "position_y": 0.0,
+      "velocity_x": 27.0,
+      "velocity_y": 0.0
+    }
+  ],
+  "lanes": [
+    { "lane_id": 0, "speed_limit": 29.0, "is_blocked": false, "right_neighbor_id": 1 },
+    { "lane_id": 1, "speed_limit": 29.0, "is_blocked": false, "left_neighbor_id": 0, "right_neighbor_id": 2 },
+    { "lane_id": 2, "speed_limit": 29.0, "is_blocked": false, "left_neighbor_id": 1 }
+  ],
+  "road_condition": "dry",
+  "weather": "clear"
+}

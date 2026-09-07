@@ -1,0 +1,40 @@
+{
+  "scenario_id": "SCENARIO_2_SLOW_TRUCK_OVERTAKE",
+  "description": "Ego vehicle approaching a slow heavy truck (15 m/s) in center lane. Left lane is open for safe overtake.",
+  "ego_vehicle": {
+    "id": "ego",
+    "lane_id": 1,
+    "position_x": 100.0,
+    "position_y": 4.0,
+    "velocity_x": 26.0,
+    "velocity_y": 0.0,
+    "target_speed": 26.0
+  },
+  "obstacles": [
+    {
+      "id": "slow_truck_lead",
+      "vehicle_type": "truck",
+      "lane_id": 1,
+      "position_x": 130.0,
+      "position_y": 4.0,
+      "velocity_x": 15.0,
+      "velocity_y": 0.0
+    },
+    {
+      "id": "car_rear_right",
+      "vehicle_type": "car",
+      "lane_id": 2,
+      "position_x": 70.0,
+      "position_y": 8.0,
+      "velocity_x": 25.0,
+      "velocity_y": 0.0
+    }
+  ],
+  "lanes": [
+    { "lane_id": 0, "speed_limit": 29.0, "is_blocked": false, "right_neighbor_id": 1 },
+    { "lane_id": 1, "speed_limit": 29.0, "is_blocked": false, "left_neighbor_id": 0, "right_neighbor_id": 2 },
+    { "lane_id": 2, "speed_limit": 29.0, "is_blocked": false, "left_neighbor_id": 1 }
+  ],
+  "road_condition": "dry",
+  "weather": "clear"
+}
