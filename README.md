@@ -82,7 +82,7 @@ CSE598-Capstone-Baseline/
 
 ### 2. Clone Repository & Install Dependencies
 ```bash
-git clone https://github.com/imonuilsuleimanov/CSE598-Capstone-Baseline.git
+git clone https://github.com/Imonuil12/CSE598-Capstone-Baseline.git
 cd CSE598-Capstone-Baseline
 pip install -r requirements.txt
 ```
