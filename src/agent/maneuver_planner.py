@@ -98,7 +98,7 @@ Output strictly raw JSON matching this schema:
   "rationale": "Clear step-by-step safety explanation."
 }}
 """
-        candidate_models = [self.model_name, "gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.0-flash"]
+        candidate_models = [self.model_name, "gemini-3.5-flash", "gemini-3.6-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
         last_error = None
         
         for candidate_model in candidate_models:
