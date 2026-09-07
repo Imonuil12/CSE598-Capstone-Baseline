@@ -98,15 +98,26 @@ Output strictly raw JSON matching this schema:
   "rationale": "Clear step-by-step safety explanation."
 }}
 """
-        if self.use_new_sdk:
-            response = self.genai_client.models.generate_content(
-                model=self.model_name,
-                contents=prompt
-            )
-            text = response.text
+        candidate_models = [self.model_name, "gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.0-flash"]
+        last_error = None
+        
+        for candidate_model in candidate_models:
+            try:
+                if self.use_new_sdk:
+                    response = self.genai_client.models.generate_content(
+                        model=candidate_model,
+                        contents=prompt
+                    )
+                    text = response.text
+                else:
+                    response = self.genai_client.generate_content(prompt)
+                    text = response.text
+                break
+            except Exception as err:
+                last_error = err
+                continue
         else:
-            response = self.genai_client.generate_content(prompt)
-            text = response.text
+            raise last_error
 
         # Extract JSON substring
         json_start = text.find('{')
